@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>myFavorite</title>
+  </head>
+  <script type="text/javascript">
+    APP_CONF = {
+      // ENV:'<%=htmlWebpackPlugin.options.env%>',
+      PROTOCOL: 'http',
+      CDN: './',
+      API_DOMAIN:'',
+      // MOCK:'http://47.96.139.125/mock',
+      PROXY_ADVISOR: '<%=htmlWebpackPlugin.options.env==="dev"?"/api":"/api2"%>'
+    }
+  </script>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
