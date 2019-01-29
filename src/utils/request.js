@@ -25,20 +25,21 @@ service.interceptors.request.use(config => {
 // respone interceptor
 service.interceptors.response.use(
   response => {
-    const res = response.data
-    if (res.code === '000000') {
-      return response
-    } if (res.code === '800000') {
-      store.dispatch('LogOut').then(() => {
-        location.reload() // 为了重新实例化vue-router对象 避免bug
-      })
-    } else {
-      Message({
-        message: res.msg,
-        type: 'error',
-        duration: 5 * 1000
-      })
-    }
+    // const res = response.data
+    // if (res.code === '000000') {
+    //   return response
+    // } if (res.code === '800000') {
+    //   store.dispatch('LogOut').then(() => {
+    //     location.reload() // 为了重新实例化vue-router对象 避免bug
+    //   })
+    // } else {
+    //   Message({
+    //     message: res.msg,
+    //     type: 'error',
+    //     duration: 5 * 1000
+    //   })
+    // }
+    return response;
   },
   error => {
     console.log('err' + error)// for debug
